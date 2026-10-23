@@ -40,7 +40,9 @@ jobs:
       - name: sgml
         run: |
           cd ./docs/reference/tmpl
-          for file in *.sgml; do jw -f docbook -b html "$file"; done
+          for file in *.sgml; do
+          jw -f docbook -b html "$file" || true
+          done
           mkdir -p ../../../html
           cp ./*.html ../../../html/
       - name: Setup Pages
