@@ -31,6 +31,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: update
+        run: sudo apt-get update
       - uses: awalsh128/cache-apt-pkgs-action@v1
         with:
             packages: docbook-utils
